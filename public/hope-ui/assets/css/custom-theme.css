@@ -1,6 +1,9 @@
 :root {
     --bs-primary: #493628 !important;
     --bs-primary-rgb: 73, 54, 40 !important;
+    --bs-primary-tint-90: #fff7f0 !important;
+    --bs-primary-tint-40: #705C53 !important;
+    --bs-primary-shade-20: #493628 !important;
 }
 
 .btn-primary {

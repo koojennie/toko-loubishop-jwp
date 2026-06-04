@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="iq-header-img">
-      <img src="{{ asset('hope-ui/assets/images/dashboard/top-header.png') }}" alt="header"
+      <img src="{{ asset('hope-ui/assets/images/dashboard/top-header.jpg') }}" alt="header"
         class="theme-color-default-img img-fluid w-100 h-100 animated-scaleX">
     </div>
   </div>

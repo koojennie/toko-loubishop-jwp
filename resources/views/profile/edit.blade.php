@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="iq-header-img">
-      <img src="{{ asset('hope-ui/assets/images/dashboard/top-header.png') }}" alt="header"
+      <img src="{{ asset('hope-ui/assets/images/dashboard/top-header.jpg') }}" alt="header"
         class="theme-color-default-img img-fluid w-100 h-100 animated-scaleX">
     </div>
   </div>
@@ -42,7 +42,7 @@
       <div class="col-lg-4">
         <div class="card" data-aos="fade-up" data-aos-delay="400">
           <div class="card-body text-center">
-            <img src="{{ asset('hope-ui/assets/images/avatars/01.png') }}" alt="{{ $user->name }}"
+            <img src="{{ asset('hope-ui/assets/images/avatars/user-logo.svg') }}" alt="{{ $user->name }}"
               class="rounded-pill img-fluid avatar-130 mb-3">
             <h4 class="mb-1">{{ $user->name }}</h4>
             <p class="text-muted mb-2">Administrator</p>

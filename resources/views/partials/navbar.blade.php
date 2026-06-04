@@ -46,7 +46,7 @@
                 <li class="nav-item dropdown">
                     <a class="py-0 nav-link d-flex align-items-center" href="#" id="navbarDropdown"
                         role="button" data-bs-toggle="dropdown">
-                        <img src="{{ asset('hope-ui/assets/images/avatars/01.png') }}" alt="User-Profile"
+                        <img src="{{ asset('hope-ui/assets/images/avatars/user-logo.svg') }}" alt="User-Profile"
                             class="theme-color-default-img img-fluid avatar avatar-50 avatar-rounded">
                         <div class="caption ms-3 d-none d-md-block">
                             <h6 class="mb-0 caption-title">{{ auth()->user()->name ?? 'Admin Stok' }}</h6>

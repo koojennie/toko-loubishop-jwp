@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="{{ asset('hope-ui/assets/css/customizer.min.css') }}" />
 	<!-- RTL Css -->
 	<link rel="stylesheet" href="{{ asset('hope-ui/assets/css/rtl.min.css') }}" />
+	{{-- override kamu, paling bawah sendiri ✅ --}}
+    <link rel="stylesheet" href="{{ asset('hope-ui/assets/css/custom-theme.css') }}" />
 	@stack('styles')
 </head>
 <body class=" ">
