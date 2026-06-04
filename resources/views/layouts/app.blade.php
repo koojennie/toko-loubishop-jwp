@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('title', 'Pencatatan Stok Barang')</title>
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="{{ asset('hope-ui/assets/images/favicon.ico') }}" />
+	<link rel="shortcut icon" href="{{ asset('hope-ui/assets/images/icons/favicon.ico') }}" />
 	<!-- Library / Plugin Css Build -->
 	<link rel="stylesheet" href="{{ asset('hope-ui/assets/css/core/libs.min.css') }}" />
 	<!-- Aos Animation Css -->

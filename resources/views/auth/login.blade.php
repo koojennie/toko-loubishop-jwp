@@ -113,7 +113,7 @@ mb-3">
                     </div>
                 </div>
                 <div class="col-md-6 d-md-block d-none bg-primary p-0 mt-n1 vh-100 overflow-hidden">
-                    <img src="{{ asset('hope-ui/assets/images/auth/ujicoba.png')}}" class="img-fluid gradientmain animated-scaleX" alt="Ilustrasi Login Pencatatan Stok Barang">
+                    <img src="{{ asset('hope-ui/assets/images/auth/login.png')}}" class="img-fluid gradientmain animated-scaleX" alt="Ilustrasi Login Pencatatan Stok Barang">
                 </div>
             </div>
         </section>

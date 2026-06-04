@@ -68,8 +68,7 @@
             <div class="header-title">
               <h4 class="card-title mb-1">Master Data Kategori Barang</h4>
               <p class="mb-0 text-secondary">
-                Kelola pengelompokan barang seperti besi beton, baja ringan, pipa besi, plat
-                baja, dan kategori lainnya.
+                Kelola pengelompokan barang seperti jam tangan, tas, kacamata, dan kategori lainnya.
               </p>
             </div>
             <button type="button" class="btn btn-primary btn-sm btn-create-kategori">

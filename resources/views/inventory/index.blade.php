@@ -52,7 +52,7 @@
             <div class="header-title">
               <h4 class="card-title mb-1">Data Persediaan Barang</h4>
               <p class="mb-0 text-secondary">
-                Tabel transaksi keluar masuk barang Toko Bangunan Jwp.
+                Tabel transaksi keluar masuk barang Toko LoubiShop.
               </p>
             </div>
             <div class="d-flex gap-2">
