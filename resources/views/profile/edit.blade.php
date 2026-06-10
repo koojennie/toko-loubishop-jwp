@@ -112,6 +112,19 @@
                   @error('role')
                     <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
+                  {{-- kalau ini jennie untuk option enum edit buat belajar ya --}}
+                  {{-- <select name="role" class="form-select @error('role') is-invalid @enderror" required>
+                      <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>
+                          Administrator
+                      </option>
+                      <option value="pimpinan" {{ old('role', $user->role) == 'pimpinan' ? 'selected' : '' }}>
+                          Pimpinan
+                      </option>
+                  </select>
+
+                  @error('role')
+                      <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror --}}
                 </div>
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Status Akun</label>
