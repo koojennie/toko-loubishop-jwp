@@ -21,6 +21,13 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/laporan', [ReportController::class, 'index'])->name('reports.index');
+    Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profil', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('/ubah-password', [ProfileController::class, 'password'])->name('profile.password');
+    Route::put('/ubah-password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+});
+Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::prefix('master-data')->name('master-data.')->group(function () {
         Route::resource('/kategori-barang', CategoryController::class);
         Route::resource('/daftar-barang', ProductController::class);
@@ -29,12 +36,4 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/persediaan-barang', [InventoryController::class, 'index'])->name('inventory.index');
     Route::post('/persediaan-barang/transaksi', [InventoryController::class, 'storeTransaction'])->name('inventory.transaction.store');
-
-    Route::get('/laporan', [ReportController::class, 'index'])->name('reports.index');
-
-    Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/profil', [ProfileController::class, 'update'])->name('profile.update');
-
-    Route::get('/ubah-password', [ProfileController::class, 'password'])->name('profile.password');
-    Route::put('/ubah-password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 });

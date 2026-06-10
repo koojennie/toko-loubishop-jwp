@@ -15,10 +15,11 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'admin@tokobangunanjwp.com'],
+            ['email' => 'admin@loubishop.site'],
             [
-                'name' => 'Admin Toko Bangunan JWP',
+                'name' => 'Admin Toko LoubiShop',
                 'password' => Hash::make('password123'),
+                'role' => 'admin',
             ]
         );
 

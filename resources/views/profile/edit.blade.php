@@ -45,7 +45,11 @@
             <img src="{{ asset('hope-ui/assets/images/avatars/user-logo.svg') }}" alt="{{ $user->name }}"
               class="rounded-pill img-fluid avatar-130 mb-3">
             <h4 class="mb-1">{{ $user->name }}</h4>
+            @if(auth()->user()->role === 'admin')
             <p class="text-muted mb-2">Administrator</p>
+            @else
+            <p class="text-muted mb-2">Pimpinan</p>
+            @endif
             <span class="badge rounded-pill bg-primary">Aktif</span>
             <hr>
             <div class="text-start">
@@ -55,7 +59,11 @@
               </div>
               <div class="d-flex justify-content-between mb-2">
                 <span class="text-muted">Role</span>
+                @if(auth()->user()->role === 'admin')
                 <span class="fw-semibold">Admin</span>
+                @else
+                <span class="fw-semibold">Pimpinan</span>
+                @endif
               </div>
               <div class="d-flex justify-content-between mb-2">
                 <span class="text-muted">Status Akun</span>
@@ -99,8 +107,11 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Role</label>
-                  <input type="text" class="form-control" value="Admin" readonly>
-                  <small class="text-muted">Field role belum tersedia pada tabel users.</small>
+                  <input type="text" name="role" class="form-control @error('role') is-invalid @enderror"
+                    value="{{ old('role', $user->role) }}" placeholder="Masukkan role" required readonly>
+                  @error('role')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
                 </div>
                 <div class="col-md-6 mb-3">
                   <label class="form-label">Status Akun</label>

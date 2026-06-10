@@ -50,6 +50,7 @@
                         <span class="item-name">Dashboard</span>
                     </a>
                 </li>
+                @if(auth()->user()->role === 'admin') {{-- jennie ini kode untuk role admin yg boleh --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('inventory.*') ? 'active' : '' }}"
                         href="{{ route('inventory.index') }}">
@@ -64,11 +65,13 @@
                         <span class="item-name">Persediaan Barang</span>
                     </a>
                 </li>
+                @endif
                 @php
                 $masterActive = request()->routeIs('master-data.kategori-barang.*')
                 || request()->routeIs('master-data.daftar-barang.*')
                 || request()->routeIs('master-data.manajemen-pengguna.*');
                 @endphp
+                @if(auth()->user()->role === 'admin') {{-- ini juga jennie --}}
                 <li class="nav-item">
                     <a class="nav-link {{ $masterActive ? 'active' : '' }}"
                         data-bs-toggle="collapse"
@@ -142,6 +145,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('reports.*') ? 'active' : '' }}"
                         href="{{ route('reports.index') }}">
