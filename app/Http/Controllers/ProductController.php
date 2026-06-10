@@ -29,6 +29,7 @@ class ProductController extends Controller
 			'stock' => ['required', 'integer', 'min:0',],
 			'minimum_stock' => ['required', 'integer', 'min:0',],
 			'description' => ['nullable', 'string',],
+			'price' => ['required', 'numeric', 'min:0'],
 		], [
 			'category_id.required' => 'Kategori barang wajib dipilih.',
 			'category_id.exists' => 'Kategori barang tidak valid.',
@@ -42,6 +43,9 @@ class ProductController extends Controller
 			'minimum_stock.required' => 'Stok minimum wajib diisi.',
 			'minimum_stock.integer' => 'Stok minimum harus berupa angka.',
 			'minimum_stock.min' => 'Stok minimum tidak boleh kurang dari 0.',
+			'price.required' => 'Harga barang wajib diisi.',
+			'price.numeric' => 'Harga barang harus berupa angka.',
+			'price.min' => 'Harga barang tidak boleh kurang dari 0.',
 		]);
 
 		Product::create([
@@ -51,6 +55,7 @@ class ProductController extends Controller
 			'unit' => $request->unit,
 			'stock' => $request->stock,
 			'minimum_stock' => $request->minimum_stock,
+			'description' => $request->description,
 			'description' => $request->description,
 		]);
 		return redirect()
@@ -68,6 +73,7 @@ class ProductController extends Controller
 			'stock' => ['required', 'integer', 'min:0',],
 			'minimum_stock' => ['required', 'integer', 'min:0',],
 			'description' => ['nullable', 'string',],
+			'price' => ['required', 'numeric', 'min:0'],
 		], [
 			'category_id.required' => 'Kategori barang wajib dipilih.',
 			'category_id.exists' => 'Kategori barang tidak valid.',
@@ -81,6 +87,9 @@ class ProductController extends Controller
 			'minimum_stock.required' => 'Stok minimum wajib diisi.',
 			'minimum_stock.integer' => 'Stok minimum harus berupa angka.',
 			'minimum_stock.min' => 'Stok minimum tidak boleh kurang dari 0.',
+			'price.required' => 'Harga barang wajib diisi.',
+			'price.numeric' => 'Harga barang harus berupa angka.',
+			'price.min' => 'Harga barang tidak boleh kurang dari 0.',
 		]);
 		$daftar_barang->update([
 			'category_id' => $request->category_id,
@@ -90,6 +99,7 @@ class ProductController extends Controller
 			'stock' => $request->stock,
 			'minimum_stock' => $request->minimum_stock,
 			'description' => $request->description,
+			'price' => $request->price,
 		]);
 		return redirect()
 			->route('master-data.daftar-barang.index')

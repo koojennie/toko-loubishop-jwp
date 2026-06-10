@@ -72,6 +72,7 @@
                     <th>Stok</th>
                     <th>Minimum</th>
                     <th>Status</th>
+                    <th>Harga</th>
                     <th width="25%" class="text-center">Aksi</th>
                   </tr>
                 </thead>
@@ -100,12 +101,14 @@
                           <span class="badge bg-success">Aman</span>
                         @endif
                       </td>
+                      <td>Rp {{ number_format($product->price, 0, ',', '.') }}</td>
                       <td class="text-center">
                         <div class="d-flex justify-content-center gap-1 flex-nowrap">
                           <button type="button" class="btn btn-info btn-sm btn-detail-barang"
                             data-id="{{ $product->id }}" data-category-id="{{ $product->category_id }}"
                             data-category-name="{{ e($product->category->name ?? '-') }}"
                             data-code="{{ e($product->code) }}" data-name="{{ e($product->name) }}"
+                            data-price="{{ $product->price }}"
                             data-unit="{{ e($product->unit) }}" data-stock="{{ $product->stock }}"
                             data-minimum-stock="{{ $product->minimum_stock }}"
                             data-description="{{ e($product->description) }}"
@@ -117,6 +120,7 @@
                           <button type="button" class="btn btn-warning btn-sm btn-edit-barang"
                             data-id="{{ $product->id }}" data-category-id="{{ $product->category_id }}"
                             data-code="{{ e($product->code) }}" data-name="{{ e($product->name) }}"
+                            data-price="{{ $product->price }}"
                             data-unit="{{ e($product->unit) }}" data-stock="{{ $product->stock }}"
                             data-minimum-stock="{{ $product->minimum_stock }}"
                             data-description="{{ e($product->description) }}">
@@ -203,12 +207,19 @@
                 <input type="text" name="code" id="code" class="form-control"
                   placeholder="Contoh: BRG-001" required>
               </div>
-              <div class="col-md-12 mb-3">
+              <div class="col-md-6 mb-3">
                 <label class="form-label">
                   Nama Barang <span class="text-danger">*</span>
                 </label>
                 <input type="text" name="name" id="name" class="form-control"
                   placeholder="Contoh: Baja Ringan C75" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">
+                  Harga Barang 
+                </label>
+                <input type="number" name="price" id="price" class="form-control"
+                  placeholder="Contoh: 1.000.000" required>
               </div>
               <div class="col-md-4 mb-3">
                 <label class="form-label">
@@ -263,6 +274,7 @@
         const $categoryId = $('#category_id');
         const $code = $('#code');
         const $name = $('#name');
+        const $price = $('#price');
         const $unit = $('#unit');
         const $stock = $('#stock');
         const $minimumStock = $('#minimum_stock');
@@ -280,6 +292,7 @@
           $categoryId.prop('disabled', false).val('');
           $code.prop('readonly', false).val('');
           $name.prop('readonly', false).val('');
+          $price.prop('readonly', false).val('');
           $unit.prop('readonly', false).val('pcs');
           $stock.prop('readonly', false).val(0);
           $minimumStock.prop('readonly', false).val(10);
@@ -307,6 +320,7 @@
           $categoryId.val($(this).data('category-id'));
           $code.val($(this).data('code'));
           $name.val($(this).data('name'));
+          $price.val($(this).data('price'));
           $unit.val($(this).data('unit'));
           $stock.val($(this).data('stock'));
           $minimumStock.val($(this).data('minimum-stock'));
@@ -320,6 +334,7 @@
           const categoryId = $(this).data('category-id');
           const code = $(this).data('code');
           const name = $(this).data('name');
+          const price = $(this).data('price');
           const unit = $(this).data('unit');
           const stock = parseInt($(this).data('stock'));
           const minimumStock = parseInt($(this).data('minimum-stock'));
@@ -330,6 +345,7 @@
           $categoryId.val(categoryId);
           $code.val(code);
           $name.val(name);
+          $price.val(price);
           $unit.val(unit);
           $stock.val(stock);
           $minimumStock.val(minimumStock);
@@ -337,6 +353,7 @@
           $categoryId.prop('disabled', true);
           $code.prop('readonly', true);
           $name.prop('readonly', true);
+          $price.prop('readonly', true);
           $unit.prop('readonly', true);
           $stock.prop('readonly', true);
           $minimumStock.prop('readonly', true);
