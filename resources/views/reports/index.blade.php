@@ -231,25 +231,25 @@
               [25, 50, 100, -1],
               [25, 50, 100, 'ALL']
             ],
-            dom: '' < 'row align-items-center mb-3' < 'col-md-4' l > < 'col-md-4 text-center' B > < 'col-md-4' f >> rt < 'row align-items-center mt-3' < 'col-md-6' i > < 'col-md-6' p >> '',
+            dom: " < 'row align-items-center mb-3' < 'col-md-4' l > < 'col-md-4 text-center' B > < 'col-md-4' f >> "  + "rt" + " < 'row align-items-center mt-3' < 'col-md-6' i > < 'col-md-6' p >> ",
             buttons: [
-              // {
-              // extend: 'excelHtml5',
-              // text: 'Export Excel',
-              // title: 'Laporan Keluar Masuk Barang'
-              // },
-              // {
-              // extend: 'pdfHtml5',
-              // text: 'Export PDF',
-              // title: 'Laporan Keluar Masuk Barang',
-              // orientation: 'landscape',
-              // pageSize: 'A4'
-              // },
-              // {
-              // extend: 'print',
-              // text: 'Print',
-              // title: 'Laporan Keluar Masuk Barang'
-              // }
+              {
+                extend: 'excelHtml5',
+                text: 'Export Excel',
+                title: 'Laporan Keluar Masuk Barang'
+              },
+              {
+                extend: 'pdfHtml5',
+                text: 'Export PDF',
+                title: 'Laporan Keluar Masuk Barang',
+                orientation: 'landscape',
+                pageSize: 'A4'
+              },
+              {
+                extend: 'print',
+                text: 'Print',
+                title: 'Laporan Keluar Masuk Barang'
+              }
             ]
           });
         }
